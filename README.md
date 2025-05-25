@@ -6,11 +6,22 @@ automation and interaction capabilities for developers and tools.
 
 [![Install with Docker in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=github&inputs=%5B%7B%22id%22%3A%22github_token%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22GitHub%20Personal%20Access%20Token%22%2C%22password%22%3Atrue%7D%5D&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22ghcr.io%2Fgithub%2Fgithub-mcp-server%22%5D%2C%22env%22%3A%7B%22GITHUB_PERSONAL_ACCESS_TOKEN%22%3A%22%24%7Binput%3Agithub_token%7D%22%7D%7D) [![Install with Docker in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install_Server-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=github&inputs=%5B%7B%22id%22%3A%22github_token%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22GitHub%20Personal%20Access%20Token%22%2C%22password%22%3Atrue%7D%5D&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22ghcr.io%2Fgithub%2Fgithub-mcp-server%22%5D%2C%22env%22%3A%7B%22GITHUB_PERSONAL_ACCESS_TOKEN%22%3A%22%24%7Binput%3Agithub_token%7D%22%7D%7D&quality=insiders)
 
+## 🚀 Test PR - Enhanced Features
+
+> **Note**: This is a test pull request demonstrating GitHub MCP Server capabilities.
+
+**New in this test update:**
+- ✨ Enhanced documentation structure
+- 🔧 Improved setup instructions
+- 📚 Better organization of use cases
+- 🛠️ Added troubleshooting section
+
 ## Use Cases
 
 - Automating GitHub workflows and processes.
 - Extracting and analyzing data from GitHub repositories.
 - Building AI powered tools and applications that interact with GitHub's ecosystem.
+- **[NEW]** Testing and demonstrating pull request workflows
 
 ## Prerequisites
 
@@ -137,6 +148,15 @@ If you don't have Docker, you can use `go build` to build the binary in the
 }
 ```
 
+## 🔧 Troubleshooting
+
+**Common Issues:**
+- **Docker Permission Errors**: Ensure Docker is running and you have proper permissions
+- **Token Authentication**: Verify your GitHub Personal Access Token has the required scopes
+- **Connection Issues**: Check your network connection and Docker registry access
+
+For more help, please refer to the [GitHub MCP Server documentation](https://github.com/github/github-mcp-server/issues).
+
 ## Tool Configuration
 
 The GitHub MCP Server supports enabling or disabling specific groups of functionalities via the `--toolsets` flag. This allows you to control which GitHub API capabilities are available to your AI tools. Enabling only the toolsets that you need can help the LLM with tool choice and reduce the context size.
@@ -145,14 +165,14 @@ The GitHub MCP Server supports enabling or disabling specific groups of function
 
 The following sets of tools are available (all are on by default):
 
-| Toolset                 | Description                                                   |
-| ----------------------- | ------------------------------------------------------------- |
-| `repos`                 | Repository-related tools (file operations, branches, commits) |
-| `issues`                | Issue-related tools (create, read, update, comment)           |
-| `users`                 | Anything relating to GitHub Users                             |
-| `pull_requests`         | Pull request operations (create, merge, review)               |
-| `code_security`         | Code scanning alerts and security features                    |
-| `experiments`           | Experimental features (not considered stable)                 |
+| Toolset              | Description                                                     |
+| -------------------- | --------------------------------------------------------------- |
+| `repos`              | Repository-related tools (file operations, branches, commits) |
+| `issues`             | Issue-related tools (create, read, update, comment)           |
+| `users`              | Anything relating to GitHub Users                               |
+| `pull_requests`      | Pull request operations (create, merge, review)                |
+| `code_security`      | Code scanning alerts and security features                     |
+| `experiments`        | Experimental features (not considered stable)                  |
 
 #### Specifying Toolsets
 
